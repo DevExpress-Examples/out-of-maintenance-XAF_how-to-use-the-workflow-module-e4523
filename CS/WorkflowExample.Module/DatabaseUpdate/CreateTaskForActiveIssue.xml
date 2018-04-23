@@ -1,0 +1,50 @@
+﻿<Activity mc:Ignorable="sap sads" x:Class="DevExpress.Workflow.XafWorkflow"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:dpb="clr-namespace:DevExpress.Persistent.BaseImpl;assembly=DevExpress.Persistent.BaseImpl.v{0}.{1}"
+ xmlns:dwa="clr-namespace:DevExpress.Workflow.Activities;assembly=DevExpress.Workflow.Activities.v{0}.{1}"
+ xmlns:dx="clr-namespace:DevExpress.Xpo;assembly=DevExpress.Data.v{0}.{1}"
+ xmlns:dx1="clr-namespace:DevExpress.Xpo;assembly=DevExpress.Xpo.v{0}.{1}"
+ xmlns:dxh="clr-namespace:DevExpress.Xpo.Helpers;assembly=DevExpress.Data.v{0}.{1}"
+ xmlns:dxh1="clr-namespace:DevExpress.Xpo.Helpers;assembly=DevExpress.Xpo.v{0}.{1}"
+ xmlns:dxmh="clr-namespace:DevExpress.Xpo.Metadata.Helpers;assembly=DevExpress.Xpo.v{0}.{1}"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:s1="clr-namespace:System;assembly=System"
+ xmlns:s2="clr-namespace:System;assembly=System.Core"
+ xmlns:s3="clr-namespace:System;assembly=System.ServiceModel"
+ xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:wmb="clr-namespace:WorkflowExample.Module.BusinessObjects;assembly=WorkflowExample.Module"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="targetObjectId" Type="InArgument(x:Object)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>308,415</sap:VirtualizedContainerService.HintSize>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <dwa:ObjectSpaceTransactionScope AutoCommit="True" sap:VirtualizedContainerService.HintSize="268,375">
+    <dwa:ObjectSpaceTransactionScope.Variables>
+      <Variable x:TypeArguments="wmb:Issue" Name="issue" />
+      <Variable x:TypeArguments="wmb:Task" Name="task" />
+    </dwa:ObjectSpaceTransactionScope.Variables>
+    <dwa:GetObjectByKey x:TypeArguments="wmb:Issue" sap:VirtualizedContainerService.HintSize="242,60" Key="[targetObjectId]" Result="[issue]" />
+    <dwa:CreateObject x:TypeArguments="wmb:Task" sap:VirtualizedContainerService.HintSize="242,22" Result="[task]" />
+    <Assign sap:VirtualizedContainerService.HintSize="242,60">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[task.Subject]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["New active issue: " + issue.Subject]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="242,60">
+      <Assign.To>
+        <OutArgument x:TypeArguments="wmb:Issue">[task.Issue]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="wmb:Issue">[issue]</InArgument>
+      </Assign.Value>
+    </Assign>
+  </dwa:ObjectSpaceTransactionScope>
+</Activity>
