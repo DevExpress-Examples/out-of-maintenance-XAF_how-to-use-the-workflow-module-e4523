@@ -1,3 +1,10 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [Issue.cs](./CS/WorkflowExample.Module/BusinessObjects/Issue.cs) (VB: [Issue.vb](./VB/WorkflowExample.Module/BusinessObjects/Issue.vb))
+* [Task.cs](./CS/WorkflowExample.Module/BusinessObjects/Task.cs) (VB: [Task.vb](./VB/WorkflowExample.Module/BusinessObjects/Task.vb))
+* [WorkflowServerService.cs](./CS/WorkflowExample.Service/WorkflowServerService.cs) (VB: [WorkflowServerService.vb](./VB/WorkflowExample.Service/WorkflowServerService.vb))
+<!-- default file list end -->
 # How to: Use the Workflow Module
 
 
