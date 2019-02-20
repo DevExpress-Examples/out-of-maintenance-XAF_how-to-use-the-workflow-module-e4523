@@ -7,12 +7,12 @@ Imports System.Linq
 
 
 Namespace WorkflowExample.Service
-    <RunInstaller(True)> _
-    Partial Public Class ProjectInstaller
-        Inherits System.Configuration.Install.Installer
+	<RunInstaller(True)>
+	Partial Public Class ProjectInstaller
+		Inherits System.Configuration.Install.Installer
 
-        Public Sub New()
-            InitializeComponent()
-        End Sub
-    End Class
+		Public Sub New()
+			InitializeComponent()
+		End Sub
+	End Class
 End Namespace

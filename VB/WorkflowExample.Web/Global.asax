@@ -1,1 +1,1 @@
-﻿<%@ Application Language="vb" CodeBehind="Global.asax.vb" Inherits="WorkflowExample.Web.Global"%>
+﻿<%@ Application Language="C#" CodeBehind="Global.asax.vb" Inherits="WorkflowExample.Web.Global"%>
